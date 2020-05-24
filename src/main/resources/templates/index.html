@@ -1,0 +1,376 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Template by QBOOTSTRAP.COM" />
+    <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+    <meta name="author" content="QBOOTSTRAP.COM" />
+
+    <title>MedClinic</title>
+
+        <link th:href="@{https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700}" rel="stylesheet"/>
+        <link th:href="@{https://fonts.googleapis.com/css?family=Montserrat:300,400,700}" rel="stylesheet"/>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" th:href="@{/css/animate.css}"/>
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" th:href="@{/css/icomoon.css}"/>
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" th:href="@{/css/magnific-popup.css}"/>
+    <!-- Owl Carousel  -->
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/fowl.theme.default.min.css}"/>
+    <!-- Flexslider  -->
+    <link rel="stylesheet" th:href="@{/css/flexslider.css}"/>
+    <!-- Theme style  -->
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+
+    <!-- Modernizr JS -->
+    <script th:src="@{/js/modernizr-2.6.2.min.js}"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script th:src="@{/js/respond.min.js}"></script>
+    <![endif]-->
+
+
+</head>
+<body>
+
+<div class="qbootstrap-loader"></div>
+
+<div id="page">
+    <nav class="qbootstrap-nav" role="navigation">
+        <div class="top-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="top">
+                            <div class="row">
+                                <div class="col-md-4 col-md-push-4 text-center">
+                                    <div id="qbootstrap-logo"><a href="/index"><i class="icon-plus-outline"></i>Med<span>clinic</span></a></div>
+                                </div>
+                                <div class="col-md-4 col-md-pull-4">
+                                    <div class="num">
+                                        <span class="icon"><i class="icon-phone"></i></span>
+                                        <p><a href="#">+48 111-222-333</a><br><a href="#">+48 99-222-333</a></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="loc">
+                                        <span class="icon"><i class="icon-location"></i></span>
+                                        <p><a href="#">Street 1/2</a><br><a href="#">00-001 Warsaw</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 text-center">
+                        <div class="menu-1">
+                            <ul>
+                                <li class="active"><a href="/index">Home</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li class="has-dropdown">
+                                    <a href="departments.html">Departments</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">Warsaw</a></li>
+                                        <li><a href="#">Cracow</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-dropdown">
+                                    <a href="doctors.html">Doctors</a>
+                                </li>
+                                <li><a href="#">Contact</a></li>
+                                <li class="btn-cta"><a href="/login"><span>Log in </span></a></li>
+                                <li class="btn-cta" sec:authorize="isAuthenticated()"><a href="/appointments"><span>Account</i></span></a></li>
+                                <li class="btn-cta" sec:authorize="isAuthenticated()"><a th:href="@{/logout}"><span>Logout</span></a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <aside id="qbootstrap-hero">
+        <div class="flexslider">
+            <ul class="slides">
+                <li style="background-image: url(/images/img_bg_1.jpg);">
+                    <div class="overlay"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2 text-center slider-text">
+                                <div class="slider-text-inner">
+                                    <h1>Dr. <strong>D. Oetker</strong></h1>
+                                    <p><a class="btn btn-primary btn-lg" href="\bookappointment">Make an Appointment</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li style="background-image: url(/images/img_bg_2.jpg);">
+                    <div class="overlay"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2 text-center slider-text">
+                                <div class="slider-text-inner">
+                                    <h1>Have an Access to <strong>a Health Professional at any time</strong></h1>
+                                    <p><a class="btn btn-primary btn-lg btn-learn" href="\bookappointment">Book an Appointment</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </aside>
+
+    <div id="qbootstrap-intro">
+        <div class="row">
+            <div class="intro animate-box">
+                <div class="intro-grid color-1">
+                    <span class="icon"><i class="icon-calendar3"></i></span>
+                    <h3>Flexible Schedule</h3>
+                    <p>You can always manage your appointments and choose between variety of our doctors. Thatshow we make sure our schedule is flexible, just like yours.</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+                <div class="intro-grid color-2">
+                    <span class="icon"><i class="icon-wallet2"></i></span>
+                    <h3>Best Price Guarantee</h3>
+                    <p>High quality services are definietly our thing, but along with that we offer best price on the market for them. Check it out below.</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+                <div class="intro-grid color-3">
+                    <span class="icon"><i class="icon-clock3"></i></span>
+                    <h3>Opening Hours</h3>
+                    <p>
+                        <span>Monday – Friday: 09.00 am – 07.00 pm</span><br>
+                        <span>Saturday: 12.00 am – 05.00 pm</span><br>
+                        <span>Sunday: closed</span><br>
+                    </p>
+                    <a href="#" class="btn btn-primary">Book an Appointment</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="qbootstrap-services">
+        <div class="container">
+            <div class="row animate-box">
+                <div class="col-md-6 col-md-offset-3 text-center qbootstrap-heading">
+                    <h2>Our Services</h2>
+                    <p>MedClinic is always improving, recruting and developing better offer for ouy and your family. We offer our clients various types of medical help and service. Check below in what field we can help you with.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 animate-box">
+                    <div class="services">
+						<span class="icon">
+							<i class="icon-flow-merge"></i>
+						</span>
+                        <div class="desc">
+                            <h3><a href="#">Cardiology</a></h3>
+                            <p>Book an appointment with professional cardiologist if you have heart related problem. Our doctors will guarantee professional help and proper treatment.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-box">
+                    <div class="services">
+						<span class="icon">
+							<i class="icon-params"></i>
+						</span>
+                        <div class="desc">
+                            <h3><a href="#">Pediatric care</a></h3>
+                            <p>No more fear and crying, in our clinic pediatricians have special approach, making doctor visit with problem free. Because we care about our little ones.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-box">
+                    <div class="services">
+						<span class="icon">
+							<i class="icon-lab2"></i>
+						</span>
+                        <div class="desc">
+                            <h3><a href="#">Gynecology</a></h3>
+                            <p>Stress free and professional approach. We offer you proper help through pregnancy, illnesses, cythology, contraception and many more.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 animate-box">
+                    <div class="services">
+						<span class="icon">
+							<i class="icon-heart4"></i>
+						</span>
+                        <div class="desc">
+                            <h3><a href="#">Dermatology</a></h3>
+                            <p>The skin can be fussy and unstable in its condition. However this can be cured. Book appointment with our dermatologists and find out what we can do for you.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-box">
+                    <div class="services">
+						<span class="icon">
+							<i class="icon-params"></i>
+						</span>
+                        <div class="desc">
+                            <h3><a href="#">Neurology</a></h3>
+                            <p>We hire only the best and our neurologists are proof of that. They can offer you help whatever you're dealing in every age. Book appointment and find out.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-box">
+                    <div class="services">
+						<span class="icon">
+							<i class="icon-lab2"></i>
+						</span>
+                        <div class="desc">
+                            <h3><a href="#">Medical Treatment</a></h3>
+                            <p>We recommend only checked and reliable medical treatment. No experiments and not knowing the result. You can trust us with our selection of treatments and medications.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="qbootstrap-testimonial" class="qbootstrap-bg-section">
+        <div class="container">
+            <div class="row animate-box">
+                <div class="col-md-6 col-md-offset-3 text-center qbootstrap-heading">
+                    <h2><span>What our clients say</span></h2>
+                    <p>Here you can find out what opinion they have on our services and doctors.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 animate-box">
+                    <div class="testimony text-center">
+                        <span class="img-user" style="background-image: url(/images/person2.jpg);"></span>
+                        <span class="user">Herbert Tesla</span>
+                        <blockquote>
+                            <p>"Had huge problems with scne but Dr Burska from MedClinic helped me a lot by giving me special medication. Worked like a charm!"</p>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-box">
+                    <div class="testimony text-center">
+                        <span class="img-user" style="background-image: url(/images/person1.jpg);"></span>
+                        <span class="user">David Kowalski</span>
+                        <blockquote>
+                            <p>"Very professional service within the proper price range. Everybody is really helpful and doctors explained to me everything about my condition."</p>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-box">
+                    <div class="testimony text-center">
+                        <span class="img-user" style="background-image: url(/images/person3.jpg);"></span>
+                        <span class="user">Anna Danica</span>
+                        <blockquote>
+                            <p>"No queues or waiting, doctor was ready as soon as we came here. My kids played with the nurse toys while I could talk to doctor about his health."</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="qbootstrap-footer" role="contentinfo">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row row-pb-md">
+                <div class="col-md-3 qbootstrap-widget">
+                    <h3>About</h3>
+                    <p>Clinic close to home, just like home. By people for people. For better living. </p>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-6 qbootstrap-widget">
+                    <h3>Our Services</h3>
+                    <ul class="qbootstrap-footer-links">
+                        <li><a href="#">Cardiologic treatment</a></li>
+                        <li><a href="#">Dermatologic treatment</a></li>
+                        <li><a href="#">Gynaecologic treatment</a></li>
+                        <li><a href="#">Neurologic treatment</a></li>
+                        <li><a href="#">Dermatologic treatment</a></li>
+                        <li><a href="#">ENT treatment</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-5 col-sm-4 col-xs-12 qbootstrap-widget">
+                    <h3>Let's Talk</h3>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="sr-only">Name</label>
+                            <input type="name" class="form-control" id="name" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="sr-only">Message</label>
+                            <textarea class="form-control" id="message" rows="3" placeholder="Message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" id="btn-submit" class="btn btn-primary btn-send-message btn-md" value="Send Message">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row copyright">
+            <div class="col-md-12 text-center">
+                <p>
+                    <small class="block">&copy; 2017 Free HTML5. All Rights Reserved.</small>
+                    <small class="block">Designed by <a href="https://qbootstrap.com/" target="_blank">QBootstrap.com</a> Avaiable on <a href="https://themefisher.com/free-bootstrap-templates" class="">Themefisher.com</a></small>
+                </p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+</div>
+
+
+
+<!-- jQuery -->
+<script th:src="@{/js/jquery.min.js}"></script>
+<!-- jQuery Easing -->
+<script th:src="@{/js/jquery.easing.1.3.js}"></script>
+<!-- Bootstrap -->
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<!-- Waypoints -->
+<script th:src="@{/js/jquery.waypoints.min.js}"></script>
+<!-- Stellar Parallax -->
+<script th:src="@{/js/jquery.stellar.min.js}"></script>
+<!-- Carousel -->
+<script th:src="@{/js/owl.carousel.min.js}"></script>
+<!-- Flexslider -->
+<script th:src="@{/js/jquery.flexslider-min.js}"></script>
+<!-- countTo -->
+<script th:src="@{/js/jquery.countTo.js}"></script>
+<!-- Magnific Popup -->
+<script th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+<script th:src="@{/js/magnific-popup-options.js}"></script>
+<!-- Sticky Kit -->
+<script th:src="@{/js/sticky-kit.min.js}"></script>
+<!-- Main -->
+<script th:src="@{/js/main.js}"></script>
+
+</body>
+</html>

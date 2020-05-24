@@ -1,0 +1,11 @@
+ts.project.clinic
+ts.project.clinic.config
+ts.project.clinic.controller
+ts.project.clinic.exception
+ts.project.clinic.model.entity
+ts.project.clinic.model.forms
+ts.project.clinic.model.forms.contrait
+ts.project.clinic.repository
+ts.project.clinic.security
+ts.project.clinic.service
+ts.project.clinic.service.login
